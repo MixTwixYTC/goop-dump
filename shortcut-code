@@ -1,0 +1,26 @@
+let freezeButton = document.createElement('button');
+freezeButton.textContent = "Freeze";
+freezeButton.style.position = "fixed";
+freezeButton.style.top = "10px";
+freezeButton.style.right = "175px";
+freezeButton.style.zIndex = "1000";
+freezeButton.style.padding = "10px 15px";
+freezeButton.style.fontSize = "16px";
+freezeButton.style.backgroundColor = "#007BFF";
+freezeButton.style.color = "white";
+freezeButton.style.border = "none";
+freezeButton.style.borderRadius = "5px";
+freezeButton.style.cursor = "pointer";
+
+freezeButton.onclick = function () {
+    document.body.contentEditable = "false";
+    document.designMode = "off";
+    alert("Webpage is now frozen and not editable.");
+    this.remove();
+};
+
+document.body.contentEditable = "true";
+document.designMode = "on";
+
+document.body.appendChild(freezeButton);
+conclude();
